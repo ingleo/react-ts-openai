@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { PairOptions } from '../helpers/getPairOptions';
 
 const Button = styled.button<{ $primary?: boolean }>`
-  /* Adapt the colors based on primary prop */
   background: ${(props) => (props.$primary ? '#BF4F74' : 'white')};
   color: ${(props) => (props.$primary ? 'white' : '#BF4F74')};
 
@@ -22,7 +21,7 @@ const TraitsContainer = styled.div`
   justify-content: space-evenly;
 `;
 
-export interface OptionsPairProps {
+interface OptionsPairProps {
   key: string;
   pair: PairOptions;
   onToggleTrait: (name: string) => void;
@@ -31,7 +30,7 @@ export interface OptionsPairProps {
 export const OptionsPair: React.FC<OptionsPairProps> = ({
   pair,
   onToggleTrait,
-}: OptionsPairProps) => {
+}) => {
   return (
     <>
       <TraitsContainer>

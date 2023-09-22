@@ -31,10 +31,5 @@ export const getCategories = (): Array<CategoryOptions> => {
       name: 'Netflix series',
       valid: false,
     },
-    {
-      id: 'singers',
-      name: 'Singers',
-      valid: false,
-    },
   ];
 };
