@@ -1,7 +1,7 @@
 import { TraitList } from './components/TraitList';
 import { useTraits } from './hooks/useTraits';
 import { CategoryList } from './components/CategoryList';
-import { Container, Title, Wrapper } from './styles/MainContainer';
+import { MainContainer, Title, Wrapper } from './styles/MainContainer';
 import { useCategories } from './hooks/useCategories';
 
 function OpenAiApp() {
@@ -14,13 +14,13 @@ function OpenAiApp() {
         <Title>OpenAI (Chat) Advisor</Title>
       </Wrapper>
 
-      <Container>
+      <MainContainer>
         <TraitList
           traitList={traitListState}
           onTogglePairTrait={handleToggleTrait}
         />
         <CategoryList categoryList={categoriesListState} />
-      </Container>
+      </MainContainer>
     </>
   );
 }

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const MainContainer = styled.div`
   border-style: solid;
   border-width: 0.5px;
   border-color: #cdbe70;

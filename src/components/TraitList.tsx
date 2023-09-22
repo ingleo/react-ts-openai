@@ -1,12 +1,7 @@
-import styled from 'styled-components';
-
 import { OptionsPair } from './OptionsPair';
 import { PairOptions } from '../helpers/getPairOptions';
 
-const List = styled.div`
-  background: #e6e6fa;
-  justify-content: space-evenly;
-`;
+import { List } from '../styles/List';
 
 interface OptionsProp {
   traitList: PairOptions[];
