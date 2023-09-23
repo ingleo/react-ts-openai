@@ -26,7 +26,7 @@ export const getPairOptions = (): Array<PairOptions> => {
     {
       name: 'pairFour',
       traits: [
-        { name: 'Passive', valid: true },
+        { name: 'Reactive', valid: true },
         { name: 'Proactive', valid: false },
       ],
     },

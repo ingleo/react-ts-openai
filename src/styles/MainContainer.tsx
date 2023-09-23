@@ -6,7 +6,15 @@ export const MainContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+`;
+
+export const SelectContainer = styled(MainContainer)`
   background: #e6e6fa;
+`;
+
+export const ResultsContainer = styled(MainContainer)`
+  background: #e0eee0;
+  flex-direction: column-reverse;
 `;
 
 export const Title = styled.h1`

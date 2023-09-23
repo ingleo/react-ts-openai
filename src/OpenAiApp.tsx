@@ -1,18 +1,32 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 
-import { TraitList, CategoryList} from './components';
+import { TraitList, CategoryList } from './components';
 import { createPayload } from './helpers/createPayload';
-import { useTraits, useCategories} from './hooks';
+import { useTraits, useCategories } from './hooks';
 
-import { MainContainer, Title, Wrapper, EnquiryButton } from './styles';
+import {
+  Title,
+  Wrapper,
+  EnquiryButton,
+  SelectContainer,
+  ResultsContainer,
+} from './styles';
+import { ResultsGrid } from './components/ResultsGrid';
+import { EnquiryPayload } from './interfaces';
+
+const initialState: EnquiryPayload[] = [];
 
 function OpenAiApp() {
   const { traitListState, handleToggleTrait } = useTraits();
   const { categoriesListState, handleToggleCategory } = useCategories();
-  // const [payloads, setPayloads] = useState([]);
+  const [payloads, setPayloads] = useState(initialState);
 
   const handleCreatePayload = () => {
-    createPayload(traitListState, categoriesListState);
+    const payload: EnquiryPayload = createPayload(
+      traitListState,
+      categoriesListState
+    );
+    setPayloads([...payloads, payload]);
   };
 
   return (
@@ -21,7 +35,7 @@ function OpenAiApp() {
         <Title>OpenAI (Chat) Advisor</Title>
       </Wrapper>
 
-      <MainContainer>
+      <SelectContainer>
         <TraitList
           traitList={traitListState}
           onTogglePairTrait={handleToggleTrait}
@@ -30,12 +44,19 @@ function OpenAiApp() {
           categoryList={categoriesListState}
           onToggleCategory={handleToggleCategory}
         />
-      </MainContainer>
+      </SelectContainer>
       <Wrapper>
         <EnquiryButton onClick={handleCreatePayload}>
           Search for suggestions
         </EnquiryButton>
       </Wrapper>
+      {payloads.length !== 0 && (
+        <ResultsContainer>
+          {payloads.map((payload, index) => (
+            <ResultsGrid key={index} enquiryPayload={payload} />
+          ))}
+        </ResultsContainer>
+      )}
     </>
   );
 }

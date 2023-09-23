@@ -18,8 +18,8 @@ export const getCategories = (): Array<CategoryOptions> => {
       valid: false,
     },
     {
-      id: 'places_to_visit',
-      name: 'Places to visit',
+      id: 'cities_to_visit',
+      name: 'Cities to visit',
       valid: false,
     },
     {
