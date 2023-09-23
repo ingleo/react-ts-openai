@@ -1,8 +1,4 @@
-export interface CategoryOptions {
-  id: string;
-  name: string;
-  valid: boolean;
-}
+import { CategoryOptions } from '../interfaces'
 
 export const getCategories = (): Array<CategoryOptions> => {
   return [

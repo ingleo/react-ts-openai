@@ -1,4 +1,4 @@
-import { CategoryOptions } from '../helpers/getCategories';
+import { CategoryOptions } from '../interfaces';
 
 export type Action = {
   type: string;

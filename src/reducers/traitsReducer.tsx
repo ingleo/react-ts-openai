@@ -1,4 +1,4 @@
-import { PairOptions } from '../helpers/getPairOptions';
+import { PairOptions } from '../interfaces';
 
 export type Action = {
   type: string;

@@ -20,3 +20,10 @@ export const CategoryButton = styled(Button)<{ $primary?: boolean }>`
   border: 2px solid darkorange;
   border-radius: 3px;
 `;
+
+export const EnquiryButton = styled(Button)`
+  background: #26619c;
+  color: white;
+  border: 2px solid #26619c;
+  border-radius: 3px;
+`;

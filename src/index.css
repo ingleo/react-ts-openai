@@ -3,5 +3,11 @@
 }
 
 body {
-  padding: 20px;
+  padding: 1em 15em 1em 15em;
+}
+
+@media (max-width: 740px) {
+  body {
+    padding: 0px;
+  }
 }

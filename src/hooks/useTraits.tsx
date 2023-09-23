@@ -1,7 +1,8 @@
 import { useEffect, useReducer } from 'react';
 
 import { traitsReducer } from '../reducers/traitsReducer';
-import { PairOptions, getPairOptions } from '../helpers/getPairOptions';
+import { getPairOptions } from '../helpers/getPairOptions';
+import { PairOptions } from '../interfaces';
 
 const initialization = () => {
   return getPairOptions();

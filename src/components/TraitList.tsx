@@ -1,7 +1,7 @@
 import { OptionsPair } from './OptionsPair';
-import { PairOptions } from '../helpers/getPairOptions';
+import { PairOptions } from '../interfaces';
 
-import { List } from '../styles/List';
+import { List } from '../styles';
 
 interface OptionsProp {
   traitList: PairOptions[];
@@ -13,7 +13,6 @@ export const TraitList: React.FC<OptionsProp> = ({
   onTogglePairTrait,
 }) => {
   const handleToggleTrait = (pair: PairOptions) => {
-
     const traitsChanged = pair.traits.map((trait) => {
       return {
         ...trait,

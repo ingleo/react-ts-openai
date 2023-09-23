@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
 export const MainContainer = styled.div`
-  border-style: solid;
-  border-width: 0.5px;
-  border-color: #cdbe70;
   font-size: 1em;
   padding: 0.5em;
   display: flex;
@@ -23,4 +20,6 @@ export const Wrapper = styled.section`
   padding: 0.2em;
   background: #e6e6fa;
   justify-content: space-around;
+  border-bottom: 1px solid #26619c;
+  display: flex;
 `;

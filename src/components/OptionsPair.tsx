@@ -1,7 +1,6 @@
-import { PairOptions } from '../helpers/getPairOptions';
+import { PairOptions } from '../interfaces';
 
-import { TraitButton } from '../styles/Button';
-import { TraitsContainer } from '../styles/Container';
+import { TraitButton, TraitsContainer } from '../styles';
 
 interface OptionsPairProps {
   key: string;
