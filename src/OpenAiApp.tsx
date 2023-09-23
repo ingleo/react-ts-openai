@@ -1,9 +1,8 @@
 // import { useState } from 'react';
 
-import { TraitList } from './components/TraitList';
-import { useTraits } from './hooks/useTraits';
-import { CategoryList } from './components/CategoryList';
-import { useCategories } from './hooks/useCategories';
+import { TraitList, CategoryList} from './components';
+import { createPayload } from './helpers/createPayload';
+import { useTraits, useCategories} from './hooks';
 
 import { MainContainer, Title, Wrapper, EnquiryButton } from './styles';
 
@@ -13,7 +12,7 @@ function OpenAiApp() {
   // const [payloads, setPayloads] = useState([]);
 
   const handleCreatePayload = () => {
-    console.log('click');
+    createPayload(traitListState, categoriesListState);
   };
 
   return (
