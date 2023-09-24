@@ -32,7 +32,7 @@ function OpenAiApp() {
   return (
     <>
       <Wrapper>
-        <Title>OpenAI (Chat) Advisor</Title>
+        <Title>OpenAI (ChatGPT) Advisor</Title>
       </Wrapper>
 
       <SelectContainer>

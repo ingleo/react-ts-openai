@@ -14,7 +14,7 @@ export const getSuggestions = async (enquiryPayload: EnquiryPayload) => {
     const namesList = formatCompletionResp(data);
     return namesList;
   } catch (error) {
-    return ['Error getting suggestions'];
+    return ['Error'];
   }
 };
 
