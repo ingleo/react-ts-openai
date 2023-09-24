@@ -3,13 +3,16 @@ import { useEffect, useState } from 'react';
 import { getSuggestions } from '../helpers/getSuggestions';
 import { EnquiryPayload } from '../interfaces';
 
+const initialSuggestions: string[] = [];
 export const useGetSuggestions = (enquiryPayload: EnquiryPayload) => {
-  //const [suggestions, setSuggestions] = useState([]);
+  const [suggestions, setSuggestions] = useState<string[] | undefined>(
+    initialSuggestions
+  );
   const [isLoading, setIsLoading] = useState(true);
 
   const getNewSuggestions = async () => {
     const newSuggestions = await getSuggestions(enquiryPayload);
-    console.log(newSuggestions);
+    setSuggestions(newSuggestions);
     setIsLoading(false);
   };
 
@@ -19,6 +22,7 @@ export const useGetSuggestions = (enquiryPayload: EnquiryPayload) => {
   }, []);
 
   return {
-    isLoading
-  }
+    suggestions,
+    isLoading,
+  };
 };

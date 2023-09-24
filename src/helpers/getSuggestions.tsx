@@ -1,5 +1,6 @@
 import axios, { AxiosInstance } from 'axios';
 import { EnquiryPayload } from '../interfaces';
+import { CompletionResponse } from '../interfaces/CompletionResponse';
 
 const instance: AxiosInstance = axios.create({
   baseURL: 'https://x5zxf0v1s6.execute-api.us-east-1.amazonaws.com',
@@ -9,11 +10,19 @@ const instance: AxiosInstance = axios.create({
 
 export const getSuggestions = async (enquiryPayload: EnquiryPayload) => {
   try {
-    console.log(enquiryPayload);
     const { data } = await instance.post('/Prod/traits', enquiryPayload);
-    console.log(data);
-    //return data;
+    const namesList = formatCompletionResp(data);
+    return namesList;
   } catch (error) {
-    console.error(error);
+    return ['Error getting suggestions'];
   }
+};
+
+const formatCompletionResp = (data: CompletionResponse) => {
+  const completionResp = data.choices[0].message.content;
+  const extractedNames = completionResp.match(/"(.*?)"/g);
+  const suggestionsName = extractedNames?.map((element) =>
+    element.replace(/"/g, '')
+  );
+  return suggestionsName;
 };

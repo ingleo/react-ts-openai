@@ -3,12 +3,12 @@ import { PairOptions } from '../interfaces';
 
 import { List } from '../styles';
 
-interface OptionsProp {
+interface OptionsProps {
   traitList: PairOptions[];
   onTogglePairTrait: (newPair: PairOptions) => void;
 }
 
-export const TraitList: React.FC<OptionsProp> = ({
+export const TraitList: React.FC<OptionsProps> = ({
   traitList,
   onTogglePairTrait,
 }) => {

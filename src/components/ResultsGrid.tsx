@@ -7,11 +7,15 @@ interface ResultGridProps {
 }
 
 export const ResultsGrid: React.FC<ResultGridProps> = ({ enquiryPayload }) => {
-  const { isLoading } = useGetSuggestions(enquiryPayload);
+  const { suggestions, isLoading } = useGetSuggestions(enquiryPayload);
   return (
     <>
       {isLoading && <p>LOADER</p>}
-      <p>{JSON.stringify(enquiryPayload)}</p>
+      {
+        suggestions?.map((suggestion) => (
+            <p>{suggestion}</p>
+        ))
+      }
     </>
   );
 };
