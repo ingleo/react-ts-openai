@@ -31,7 +31,7 @@ export const TraitList: React.FC<OptionsProps> = ({
   return (
     <>
       <div>
-        <h4>Select one personality trait from each pair</h4>
+        <h4>  &#128073; Select one personality trait from each pair</h4>
         <List>
           {traitList.map((pair) => (
             <OptionsPair

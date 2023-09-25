@@ -1,3 +1,5 @@
+import { useEffect, useRef } from 'react';
+
 import { Loader } from '../components/Loader';
 import { useGetSuggestions } from '../hooks/useGetSuggestions';
 import { EnquiryPayload } from '../interfaces';
@@ -11,28 +13,44 @@ interface ResultGridProps {
 
 export const ResultsGrid: React.FC<ResultGridProps> = ({ enquiryPayload }) => {
   const { suggestions, isLoading } = useGetSuggestions(enquiryPayload);
+  const myRef = useRef<HTMLDivElement>(null);
+
+  const suggestionName = enquiryPayload.categories.join(' ');
+
+  useEffect(() => {
+    if (suggestions?.length) {
+      myRef.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  }, [suggestions?.length]);
+
   return (
     <>
       <ResultsPanel>
         {isLoading && <Loader />}
         {!isLoading && (
           <Results>
-            <ResultTitle>
-              <span>&#9989; </span>Results for{' '}
-              {enquiryPayload.categories.join(' ')}
+            <ResultTitle ref={myRef}>
+              <span>&#9989; </span>Results for {suggestionName}
             </ResultTitle>
             <ListItem>
-              {suggestions?.map((suggestion) => (
-                <li key={suggestion}>
-                  <label>{suggestion}</label>
-                  <a
-                    href={`https://www.youtube.com/results?q=${suggestion}`}
-                    target="_blank"
-                  >
-                    info
-                  </a>
-                </li>
-              ))}
+              {suggestions?.map((suggestion) =>
+                suggestion !== 'Error' ? (
+                  <li key={suggestion}>
+                    <label>{suggestion}</label>
+                    <a
+                      href={`https://www.youtube.com/results?q=${suggestion}+${suggestionName}`}
+                      target="_blank"
+                    >
+                      info
+                    </a>
+                  </li>
+                ) : (
+                  <p key={`error`}>&#10060;   Error fetching suggestions</p>
+                )
+              )}
             </ListItem>
           </Results>
         )}

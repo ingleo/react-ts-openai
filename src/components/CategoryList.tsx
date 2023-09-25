@@ -15,7 +15,7 @@ export const CategoryList: React.FC<CategoryProps> = ({
   return (
     <>
       <div>
-        <h4>Select one category for the suggestions</h4>
+        <h4>&#128073; Select one category for the suggestions</h4>
         <BorderList>
           {categoryList.map((category) => (
             <CategoryItem

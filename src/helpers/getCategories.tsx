@@ -1,4 +1,4 @@
-import { CategoryOptions } from '../interfaces'
+import { CategoryOptions } from '../interfaces';
 
 export const getCategories = (): Array<CategoryOptions> => {
   return [
@@ -25,6 +25,16 @@ export const getCategories = (): Array<CategoryOptions> => {
     {
       id: 'netflix_series',
       name: 'Netflix series',
+      valid: false,
+    },
+    {
+      id: 'clothing_brand',
+      name: 'Clothing brands',
+      valid: false,
+    },
+    {
+      id: 'food_dishes',
+      name: 'Food dishes',
       valid: false,
     },
   ];

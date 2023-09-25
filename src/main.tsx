@@ -4,9 +4,8 @@ import OpenAiApp from './OpenAiApp';
 
 import './index.css';
 
-
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  //<React.StrictMode>
+  <React.StrictMode>
     <OpenAiApp />
-  //</React.StrictMode>
+  </React.StrictMode>
 );
