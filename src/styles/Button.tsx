@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { COLORS } from './constants';
+
 export const Button = styled.button`
   font-size: 1em;
   margin: 0.8em;
@@ -8,30 +10,34 @@ export const Button = styled.button`
 `;
 
 export const TraitButton = styled(Button)<{ $primary?: boolean }>`
-  background: ${(props) => (props.$primary ? '#BF4F74' : 'white')};
-  color: ${(props) => (props.$primary ? 'white' : '#BF4F74')};
+  background: ${(props) =>
+    props.$primary ? COLORS['light-red'] : COLORS['dark-primary']};
+  color: ${(props) =>
+    props.$primary ? COLORS['light-foreground'] : COLORS['light-red']};
   box-shadow: ${(props) =>
-    props.$primary ? '1px 0px 9px 7px rgb(212 24 24 / 20%)' : 'none'};
-  border: 2px solid #bf4f74;
+    props.$primary ? '1px 0px 9px 8px rgb(212 24 24 / 20%)' : 'none'};
+  border: 2px solid ${COLORS['light-red']};
   border-radius: 3px;
 `;
 
 export const CategoryButton = styled(Button)<{ $primary?: boolean }>`
-  background: ${(props) => (props.$primary ? 'darkorange' : 'white')};
-  color: ${(props) => (props.$primary ? 'white' : 'darkorange')};
+  background: ${(props) =>
+    props.$primary ? COLORS['dark-orange'] : COLORS['dark-primary']};
+  color: ${(props) =>
+    props.$primary ? COLORS['light-foreground'] : COLORS['dark-orange']};
   box-shadow: ${(props) =>
     props.$primary ? '1px 0px 9px 7px rgb(198 133 42 / 39%)' : 'none'};
-  border: 2px solid darkorange;
+  border: 2px solid ${COLORS['dark-orange']};
   border-radius: 3px;
 `;
 
 export const EnquiryButton = styled(Button)`
-  background: #26619c;
-  color: white;
-  border: 2px solid #26619c;
+  background: ${COLORS['dark-blue']};
+  color: ${COLORS['light-foreground']};
+  border: 2px solid ${COLORS['dark-blue']};
   border-radius: 3px;
   &:focus {
-    background: #4682b4;
+    background: ${COLORS['light-blue']};
     outline: none;
   }
 `;

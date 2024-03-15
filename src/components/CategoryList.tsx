@@ -1,7 +1,7 @@
 import { CategoryOptions } from '../interfaces';
 import { CategoryItem } from './CategoryItem';
 
-import { BorderList } from '../styles';
+import { BorderList, SectionDiv, Subtitle } from '../styles';
 
 interface CategoryProps {
   categoryList: CategoryOptions[];
@@ -14,8 +14,8 @@ export const CategoryList: React.FC<CategoryProps> = ({
 }) => {
   return (
     <>
-      <div>
-        <h4>&#128073; Select one category for the suggestions</h4>
+      <SectionDiv>
+        <Subtitle>&#128073; Select one category for the suggestions</Subtitle>
         <BorderList>
           {categoryList.map((category) => (
             <CategoryItem
@@ -25,7 +25,7 @@ export const CategoryList: React.FC<CategoryProps> = ({
             />
           ))}
         </BorderList>
-      </div>
+      </SectionDiv>
     </>
   );
 };

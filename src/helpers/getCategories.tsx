@@ -27,15 +27,5 @@ export const getCategories = (): Array<CategoryOptions> => {
       name: 'Netflix series',
       valid: false,
     },
-    {
-      id: 'clothing_brand',
-      name: 'Clothing brands',
-      valid: false,
-    },
-    {
-      id: 'food_dishes',
-      name: 'Food dishes',
-      valid: false,
-    },
   ];
 };

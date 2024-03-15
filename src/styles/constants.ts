@@ -1,0 +1,16 @@
+export const COLORS = {
+  'dark-background': '#0D1116',
+  'dark-foreground': '#131920',
+  'dark-primary': '#1E2833',
+  'dark-secondary': '#263240',
+  'light-background': '#F8F8F8',
+  'light-foreground': '#F4F4F5',
+  'light-primary': '#EAEAEB',
+  'light-secondary': '#D4D4D6',
+  'dark-blue': '#26619C',
+  'light-blue': '#4682b4',
+  'light-purple': '#B57EDC',
+  'light-red': '#BF4F74',
+  'dark-orange': '#FF8C00',
+  'light-green': '#1FDB7D',
+};

@@ -1,11 +1,15 @@
 import axios, { AxiosInstance } from 'axios';
+
 import { EnquiryPayload } from '../interfaces';
 import { CompletionResponse } from '../interfaces/CompletionResponse';
 
+const suggestionsUrl = import.meta.env.VITE_SUGGESTIONS_URL;
+const xApiKey = import.meta.env.VITE_X_API_KEY;
+
 const instance: AxiosInstance = axios.create({
-  baseURL: 'https://x5zxf0v1s6.execute-api.us-east-1.amazonaws.com',
+  baseURL: suggestionsUrl,
   timeout: 8000,
-  headers: { 'X-Api-Key': 'Se4eLkDPTC2iR5zBnVOq8749o7WgZdl88Be98JPl' },
+  headers: { 'X-Api-Key': xApiKey },
 });
 
 export const getSuggestions = async (enquiryPayload: EnquiryPayload) => {

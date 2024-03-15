@@ -4,7 +4,13 @@ import { Loader } from '../components/Loader';
 import { useGetSuggestions } from '../hooks/useGetSuggestions';
 import { EnquiryPayload } from '../interfaces';
 
-import { ListItem, ResultTitle, Results, ResultsPanel } from '../styles';
+import {
+  ErrorMsg,
+  ListItem,
+  ResultTitle,
+  Results,
+  ResultsPanel,
+} from '../styles';
 
 interface ResultGridProps {
   key: number;
@@ -33,7 +39,7 @@ export const ResultsGrid: React.FC<ResultGridProps> = ({ enquiryPayload }) => {
         {!isLoading && (
           <Results>
             <ResultTitle ref={myRef}>
-              <span>&#9989; </span>Results for {suggestionName}
+              <span>&#128221;</span>Results for {suggestionName}
             </ResultTitle>
             <ListItem>
               {suggestions?.map((suggestion) =>
@@ -48,7 +54,9 @@ export const ResultsGrid: React.FC<ResultGridProps> = ({ enquiryPayload }) => {
                     </a>
                   </li>
                 ) : (
-                  <p key={`error`}>&#10060;   Error fetching suggestions</p>
+                  <ErrorMsg key={`error`}>
+                    &#10060; Error fetching suggestions
+                  </ErrorMsg>
                 )
               )}
             </ListItem>

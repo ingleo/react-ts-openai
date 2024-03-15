@@ -1,7 +1,7 @@
 import { OptionsPair } from './OptionsPair';
 import { PairOptions } from '../interfaces';
 
-import { List } from '../styles';
+import { List, SectionDiv, Subtitle } from '../styles';
 
 interface OptionsProps {
   traitList: PairOptions[];
@@ -30,8 +30,11 @@ export const TraitList: React.FC<OptionsProps> = ({
 
   return (
     <>
-      <div>
-        <h4>  &#128073; Select one personality trait from each pair</h4>
+      <SectionDiv>
+        <Subtitle>
+          {' '}
+          &#128073; Select one personality trait from each pair
+        </Subtitle>
         <List>
           {traitList.map((pair) => (
             <OptionsPair
@@ -41,7 +44,7 @@ export const TraitList: React.FC<OptionsProps> = ({
             />
           ))}
         </List>
-      </div>
+      </SectionDiv>
     </>
   );
 };
